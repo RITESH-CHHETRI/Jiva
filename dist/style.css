@@ -20,7 +20,7 @@ html, body {
 }
 
 #chat-wrapper {
-  background-color: white;
+  background-color: rgb(70, 189, 195);
   height: 100%;
   overflow: hidden;
   width: 100%;
