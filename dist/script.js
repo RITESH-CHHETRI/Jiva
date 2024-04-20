@@ -11,7 +11,10 @@ const LETTER_POOL = getEl('letter-pool'),
 const STATE = {
   isUserSendingMessage: false,
   isChatBotSendingMessage: false,
-  
+  letterPool: {
+    transitionPeriod: 30000,
+    intervals: []
+  },
   moods: ['friendly', 'suspicious', 'boastful'],
   currentMood: '',
   chatbotMessageIndex: 0,
@@ -99,40 +102,6 @@ const startNewLetterPath = (letter, nextRand, interval) => {
     startNewLetterPath(letter, nextRand, interval)
   }, STATE.letterPool.transitionPeriod + delay)
   STATE.letterPool.intervals.push(interval)
-}
-
-const setRandLetterPaths = letters => {
-  for(let i = 0; i < letters.length; i++){
-    let letter = letters[i],
-          startRand = getRand(1, 4),
-          nextRand = getRandExcept(1, 4, startRand),
-          startPos = getRandPosOffScreen(startRand),
-          nextPos = getRandPosOffScreen(nextRand),
-          transitionPeriod = STATE.letterPool.transitionPeriod,
-          delay = getRand(0, STATE.letterPool.transitionPeriod) * -1,
-          transition = `left ${transitionPeriod}ms linear ${delay}ms, top ${transitionPeriod}ms linear ${delay}ms, opacity 0.5s`
-          
-    setElPos(letter, startPos.x, startPos.y)
-    setStyle(letter, 'transition', transition)
-    addClass(letter, 'invisible')
-    LETTER_POOL.appendChild(letter)
-    setTimeout(() => {
-      setElPos(letter, nextPos.x, nextPos.y)
-      removeClass(letter, 'invisible')
-      let interval = setInterval(() => {
-        startNewLetterPath(letter, nextRand, interval)
-      }, STATE.letterPool.transitionPeriod + delay)
-    }, 1)
-  }
-}
-
-const fillLetterPool = (nSets = 1) => {
-  for(let i = 0; i < nSets; i++){
-    const lCaseLetters = getAlphabet(false),
-          uCaseLetters = getAlphabet(true)
-    setRandLetterPaths(lCaseLetters)
-    setRandLetterPaths(uCaseLetters)
-  }
 }
 
 const findMissingLetters = (letters, lCount, isUpperCase) => {
