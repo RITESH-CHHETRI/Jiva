@@ -225,13 +225,16 @@ html, body {
   text-align: left;
 }
 #chat-wrapper #chat-message-window #chat-message-column-wrapper #chat-message-column .message.received.friendly .profile-icon {
-  background: linear-gradient(to right, #03a9f4, #4caf50);
+  background-image: url("../assets/img/newicon.png");
+  background-size: contain;
 }
 #chat-wrapper #chat-message-window #chat-message-column-wrapper #chat-message-column .message.received.suspicious .profile-icon {
-  background: linear-gradient(to right, #d32f2f, #ff6f00);
+  background-image: url("../assets/img/newicon.png");
+  background-size: contain;
 }
 #chat-wrapper #chat-message-window #chat-message-column-wrapper #chat-message-column .message.received.boastful .profile-icon {
-  background: linear-gradient(to right, #ff6f00, #fbc02d);
+  background-image: url("../assets/img/newicon.png");
+  background-size: contain;
 }
 #chat-wrapper #chat-message-window #chat-message-column-wrapper #chat-message-column .message.received .profile-icon i {
   font-size: 1.5em;
