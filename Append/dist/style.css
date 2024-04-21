@@ -21,7 +21,7 @@ html, body {
 }
 
 #chat-wrapper {
-  background-color: rgb(70, 189, 195);
+  background-color: rgb(16, 43, 42);
   height: 100%;
   overflow: hidden;
   width: 100%;
@@ -35,26 +35,27 @@ html, body {
   z-index: 10;
 }
 #chat-wrapper #chat-bot-mood.friendly #chat-bot-mood-icon {
-  background: linear-gradient(to right, #03a9f4, #4caf50);
+    background-image: url("../assets/img/newicon.png");
+   
 }
 #chat-wrapper #chat-bot-mood.friendly #chat-bot-mood-label #chat-bot-mood-value {
-  color: #03a9f4;
+  background-image: url("../assets/img/newicon.png");
 }
 #chat-wrapper #chat-bot-mood.suspicious #chat-bot-mood-icon {
-  background: linear-gradient(to right, #d32f2f, #ff6f00);
+  background-image: url("../assets/img/newicon.png");
 }
 #chat-wrapper #chat-bot-mood.suspicious #chat-bot-mood-label #chat-bot-mood-value {
-  color: #d32f2f;
+  background-image: url("../assets/img/newicon.png");
 }
 #chat-wrapper #chat-bot-mood.boastful #chat-bot-mood-icon {
-  background: linear-gradient(to right, #ff6f00, #fbc02d);
+  background-image: url("../assets/img/newicon.png");
 }
 #chat-wrapper #chat-bot-mood.boastful #chat-bot-mood-label #chat-bot-mood-value {
-  color: #ff6f00;
+  background-image: url("../assets/img/newicon.png");
 }
 #chat-wrapper #chat-bot-mood #chat-bot-mood-icon {
   border-radius: 30px;
-  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
+  box-shadow: rgba(235, 26, 26, 0.12) 0px 1px 6px, rgba(238, 6, 6, 0.12) 0px 1px 4px;
   display: inline-block;
   height: 30px;
   margin-left: 10px;
@@ -81,7 +82,7 @@ html, body {
   vertical-align: top;
 }
 #chat-wrapper #chat-bot-mood #chat-bot-mood-label #chat-bot-mood-text {
-  color: #3c3c3c;
+  color: #fe0000;
 }
 #chat-wrapper #letter-pool, #chat-wrapper #temp-letter-pool {
   backface-visibility: hidden;
@@ -292,7 +293,7 @@ html, body {
   z-index: 1;
 }
 #chat-wrapper #chat-message-window #chat-message-column-wrapper #chat-message-column .message .content .text {
-  color: #b4b4b4;
+  color: #000000;
   font-size: 1em;
   font-weight: 300;
   margin: 0px;
