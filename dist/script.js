@@ -1,3 +1,4 @@
+// CHATBOT
 const LETTER_POOL = getEl('letter-pool'),
       TEMP_LETTER_POOL = getEl('temp-letter-pool'),
       LETTER_OVERLAY = getEl('letter-overlay'),
