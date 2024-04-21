@@ -23,6 +23,7 @@ texts = text_splitter.split_documents(documents)
 embeddings = HuggingFaceEmbeddings()
 
 index_name = "jiva"
+"""
 pc.create_index(
     name=index_name,
     dimension=768,
@@ -32,7 +33,7 @@ pc.create_index(
         region='us-east-1'
     )
 )
-
+"""
 index = pc.Index(index_name=index_name)
 vectordb = LC_Pinecone.from_documents(texts, embeddings, index_name=index_name)
 

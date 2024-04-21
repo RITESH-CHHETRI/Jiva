@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Overview</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1{
+            text-align: center;
+            color: #fff;
+        }
+         h2 {
+            color: #333;
+        }
+        p {
+            color: #666;
+        }
+        /* Navbar styles */
+        nav {
+            background-color: #02689f;
+            color: #fff;
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        nav ul li a {
+            color:black;
+            text-decoration: none;
+        }
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        
+        <h1>Jiva API for Devs</h1>
+
+        <div class="container">
+            <ul>
+                <li><a href="#getting-started">Getting Started</a></li>
+                <li><a href="#endpoints">Endpoints</a></li>
+                <li><a href="#Parameters">Parameters</a></li>
+                <li><a href="#examples">Examples</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main content -->
+    <div class="container">
+        <h2 id="getting-started">Getting Started</h2>
+        <p>
+            To get started with the Jiva API, you first need to sign up for an account and obtain your API key. 
+            Once you have your API key, 
+            you can start making requests to the Jiva API to access its various features and functionalities.</p>
+        
+        <h2 id="endpoints">Endpoints</h2>
+        <p>
+            <ul>
+                <li><strong>/api (GET)</strong>: Returns history of chats</li>
+                <li><strong>/api (POST)</strong>:
+                    <ul>
+                        <li>returns our LLM response</li>
+                    </ul>
+                </li>
+            </ul>
+        </p>
+        
+        <h2 id="Parameters">Parameters</h2>
+            <ul>
+    <li><strong>/api (GET)</strong>: Parameters needed: None</li>
+    <li><strong>/api (POST)</strong>:
+        <ul>
+            <li> Parameters needed: question</li>
+        </ul>
+    </li>
+</ul>
+
+</div>
+
+</body>
+</html>
