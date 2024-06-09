@@ -10,9 +10,6 @@ JIVA is a specially trained Language Model (LLM) designed to assist hospitals in
 ### 1. Storage of Doctor Details
 JIVA maintains a comprehensive database of all doctors associated with the hospital. This includes their specialties, contact information, and availability, ensuring quick access and efficient doctor-patient matching.
 
-### 2. Patient Health Monitoring
-JIVA collects and records detailed information about patients' health issues, symptoms, and medical history. It then provides personalized feedback to the patients based on this data, enhancing the monitoring and management of patient health.
-
 ### 3. Doctor Allocation
 Upon analyzing the patient's health information, JIVA automatically assigns the most suitable doctor to the patient. This ensures timely and appropriate medical attention, optimizing patient care.
 
@@ -51,9 +48,48 @@ JIVA is a sophisticated Language Model designed to address these challenges by s
 
 - *Centralized Doctor Database*: Stores comprehensive details of all doctors associated with the hospital, facilitating quick and efficient doctor allocation.
 
-- *Patient Health Monitoring*: Collects and analyzes patient health data, providing personalized feedback and recommendations to patients.
-
 - *Automated Doctor Allocation*: Matches patients with the most suitable doctor based on their medical needs, ensuring timely access to appropriate care.
 
 - *Abstract Generation*: Summarizes patient details and symptoms for doctors, streamlining the diagnosis and treatment process.
 
+## Installation
+
+1. **Clone this repository:**
+   ```sh
+   git clone https://github.com/RITESH-CHHETRI/JIVA
+   ```
+2. **Choose the LLM**  
+   -`main.py` uses OpenAI (Requires OpenAI api key)  
+   -`repl.py` uses llama-13b (Requires Replicate and Pinecone API keys)
+
+
+2. **Install required Python packages:**
+   ```sh
+   pip install -U -r mainrequirements.txt
+   ```
+   Or
+      ```sh
+   pip install -U -r replrequirements.txt
+   ```
+
+3. **Set up environment variables for OpenAI or Pinecone and Replicate**
+   - Set up either in code or a `.env` file
+
+4. **Run the program**
+   ```py
+   py main.py
+   ```
+   Or
+   ```py
+   py repl.py
+   ```
+
+## Contributors  
+
+|            |                          |
+| -------------- | ------------------------------------- |
+| Ritesh Chhetri       | [@RITESH-CHHETRI](https://github.com/RITESH-CHHETRI) |
+| Jeeva A Johney     | [@JeevaAJohney](https://github.com/JeevaAJohney) |
+| Fathimathu Swafa   | [@Fathimathu-swafa](https://github.com/Fathimathu-swafa) |
+| Soumya Annie Thomas   | [@S-A-T-07](https://github.com/S-A-T-07) |
+|            |                          |

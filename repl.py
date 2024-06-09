@@ -1,5 +1,7 @@
 import os
 import sys
+from flask import Flask, request
+from twilio.twiml.messaging_response import MessagingResponse
 from pinecone import Pinecone, ServerlessSpec
 from langchain_community.llms import Replicate
 from langchain_community.vectorstores import Pinecone as LC_Pinecone
@@ -8,12 +10,18 @@ from langchain_community.document_loaders import PyPDFLoader
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain.chains import ConversationalRetrievalChain
 
+# Twilio WhatsApp bot setup
+app = Flask(__name__)
+chat_history = []
+conversation_chain = None
 
+# Your API tokens and keys
 os.environ['REPLICATE_API_TOKEN'] = ""
 
-pineconekey=""
+pineconekey = ""
 pc = Pinecone(api_key=pineconekey)
 
+# Loading and processing PDF document
 loader = PyPDFLoader('data.pdf')
 documents = loader.load()
 
@@ -48,12 +56,25 @@ qa_chain = ConversationalRetrievalChain.from_llm(
     return_source_documents=True
 )
 
-chat_history = []
-while True:
-    query = input('Prompt: ')
-    if query.lower() in ["exit", "quit", "q"]:
-        print('Exiting')
-        sys.exit()
-    result = qa_chain({'question': query, 'chat_history': chat_history})
-    print('Answer: ' + result['answer'] + '\n')
-    chat_history.append((query, result['answer']))
+def answ(incoming_msg):
+    global chat_history, qa_chain
+    result = qa_chain({'question': incoming_msg, 'chat_history': chat_history})
+    answer = result['answer']
+    chat_history.append((incoming_msg, answer))
+    return answer
+
+@app.route('/bot', methods=['POST'])
+def bot():
+    global chat_history, qa_chain
+    print("response")
+    incoming_msg = request.values.get('Body', '').lower()
+    resp = MessagingResponse()
+    msg = resp.message()
+    if incoming_msg == "hi":
+        chat_history = []
+    reply = answ(incoming_msg)
+    msg.body(reply)
+    return str(resp)
+
+if __name__ == '__main__':
+    app.run(debug=True)
